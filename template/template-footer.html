@@ -21,22 +21,6 @@
         {% set _ = funnels.append(page.funnel) %}
       {% endif %}
     {% endfor %}
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="https://ripple.com/" target="_blank">Ripple<i class="fa fa-external-link"></i></a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-            <div class="children-display">
-              <ul>
-                <li class="level-1"><a href="https://ripple.com/company/careers/" target="_blank">{{target.strings.footer.ripple.careers}} <i class="fa fa-external-link"></i></a></li>
-                <li class="level-1"><a href="https://github.com/ripple/" target="_blank">{{target.strings.footer.ripple.github}} <i class="fa fa-external-link"></i></a></li>
-                <li class="level-1"><a href="https://ripple.com/collateral/#xrp" target="_blank">{{target.strings.footer.ripple.xrp_resources}} <i class="fa fa-external-link"></i></a></li>
-              </ul>
-            </div>
-          </div><!--/.card-body-->
-          <div class="flag-vertical">{{"%02d"|format(flag_n.next())}}</div>
-        </div><!--/.card -->
   </section>
 
   <section class="container-fluid p-5 pl-sm-0">
@@ -57,8 +41,8 @@
     </nav>
 
     <div class="absolute_bottom_footer">
-      <span>&copy; XRP Ledger Project 2019</span>
-      <span><a href="https://raw.githubusercontent.com/ripple/ripple-dev-portal/master/LICENSE">{{target.strings.footer.license}}</a></span>
+      <span>&copy; {{target.strings.footer.copyright}}</span>
+      <span><a href="{{target.repository}}/master/LICENSE">{{target.strings.footer.license}}</a></span>
     </div><!-- /.absolute_bottom_footer -->
 
   </section>

@@ -4,6 +4,8 @@ template_path: template
 template_static_path: assets
 default_template: template-doc.html
 default_pdf_template: template-pdf.html
+filter_paths:
+    - tool
 
 callout_types:
     # English
@@ -26,7 +28,6 @@ default_filters:
     - badges
     - link_replacement
     - external_links
-    - status_badges
 
 languages:
     -   code: en
@@ -41,15 +42,24 @@ languages:
 
 targets:
     -   name: en
+        lang: en
         display_name: Dactyl Starter Kit #Your name here
         filters:
             - demote_headers
         demote_headers_pdf_only: true
+        repository: https://github.com/mduo13/dactyl-starter-kit #Official repo URL here
+        strings:
+            footer:
+                copyright: Ripple
+                license: LICENSE
+            to_top:
+                short: "Top"
+                long: "Jump to top of page"
 
 cover_page:
     name: Home
     html: index.html
-    template: template-home.html
+    template: template-landing-children.html
     sidebar: disabled
 
 pages:
