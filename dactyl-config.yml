@@ -1,0 +1,104 @@
+content_path: content
+content_static_path: content/img
+template_path: template
+template_static_path: assets
+default_template: template-doc.html
+default_pdf_template: template-pdf.html
+
+callout_types:
+    # English
+    - "tip"
+    - "note"
+    - "caution"
+    - "warning"
+    # Japanese
+    - "ヒント" # equiv. of "Tip"
+    - "注記" # equiv of "Note"
+    - "注意" # equiv. of "Caution"
+    - "警告" # equiv. of "Warning"
+    # TODO: Add Español (Latin America)
+
+default_filters:
+    - multicode_tabs
+    - unicode_header_ids
+    - buttonize
+    - callouts
+    - badges
+    - link_replacement
+    - external_links
+    - status_badges
+
+languages:
+    -   code: en
+        display_name: English
+        prefix: "/"
+#    -   code: ja
+#        display_name: 日本語
+#        prefix: "/ja/"
+#    -   code: es-419
+#        display_name: Español (Latinoamerica)
+#        prefix: "/es-419/"
+
+targets:
+    -   name: en
+        display_name: Dactyl Starter Kit #Your name here
+        filters:
+            - demote_headers
+        demote_headers_pdf_only: true
+
+cover_page:
+    name: Home
+    html: index.html
+    template: template-home.html
+    sidebar: disabled
+
+pages:
+    -   name: Concepts
+        html: concepts.html
+        category: Concepts
+        template: template-landing-children.html
+        targets:
+            - en
+
+    -   md: concepts/concept1.md
+        category: Concepts
+        targets:
+            - en
+
+    -   name: Tutorials
+        html: tutorials.html
+        category: Tutorials
+        template: template-landing-children.html
+        targets:
+            - en
+
+    -   md: tutorials/tutorial1.md
+        category: Tutorials
+        targets:
+            - en
+
+    -   name: References
+        html: references.html
+        category: References
+        template: template-landing-children.html
+        targets:
+            - en
+
+    -   md: references/reference1.md
+        category: References
+        targets:
+            - en
+
+# Custom 404 page
+    -   name: 404 Not Found
+        html: 404.html
+        template: template-404.html
+        targets:
+            - en
+
+# Special sitemap file (for better Google indexing)
+    -   name: Sitemap
+        html: sitemap.txt
+        template: template-sitemap.txt
+        targets:
+            - en
