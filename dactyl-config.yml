@@ -49,6 +49,7 @@ targets:
         demote_headers_pdf_only: true
         repository: https://github.com/mduo13/dactyl-starter-kit #Official repo URL here
         strings:
+            bc_home: "Home"
             footer:
                 copyright: Ripple
                 license: LICENSE
