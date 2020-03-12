@@ -17,28 +17,26 @@
     <meta name="msapplication-config" content="assets/favicons/browserconfig.xml">
     <meta name="theme-color" content="#25A768">
 
-    <!-- jQuery -->
-    <script src="assets/vendor/jquery-1.11.1.min.js"></script>
+    <!-- Blocking JS resources -->
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
 
     <!-- Stylesheet -->
     {% if target.lang=="ja" %}
     <link href="assets/css/fonts-ja.css" rel="stylesheet" />
     {% endif %}
-    <link href="assets/css/devportal.css" rel="stylesheet" />
+    <link href="assets/css/dactyl.css" rel="stylesheet" />
 
+    {% if target.google_analytics_tag is defined %}
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-45576805-2"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{target.google_analytics_tag}}"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'UA-45576805-2');
-      gtag('config', 'UA-157720658-3', { 'linker': {
-        'domains': ['blog.xpring.io', 'forum.xpring.io', 'xpring.io',
-                    'xrpl.org', 'explorer.xrpl.org', 'testnet.xrpl.org']
-        } }
+      gtag('configure', '{{target.google_analytics_tag}}');
       );
     </script>
+    {% endif %}
 
     {% block head %}
 
@@ -46,53 +44,9 @@
 
 </head>
 
-<body class="xrp-ledger-dev-portal {% if currentpage.sidebar is undefined or currentpage.sidebar != "disabled" %}sidebar-primary {% endif %}lang-{{target.lang}} {% block bodyclasses %}{% endblock %}">
+<body class="dactyl {% if currentpage.sidebar is undefined or currentpage.sidebar != "disabled" %}sidebar-primary {% endif %} lang-{{target.lang}} {% block bodyclasses %}{% endblock %}">
 
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
-    <a href="{% if target.no_cover is defined and target.no_cover %}/{% else %}index.html{% endif %}" class="navbar-brand"><img src="assets/img/XRPLedger_DevPortal-black.svg" class="logo"  height="44" alt="{{target.display_name}}" /></a>
-    <button class="navbar-toggler" type="button" data-toggle="slide-collapse" data-target="#navbarHolder" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarHolder">
-      <ul class="nav navbar-nav">
-        {% set funnels = [] %}
-        {% for page in pages %}
-          {% if page.funnel is defined and page.funnel not in funnels %}
-            {% set thisfunneltop = pages|selectattr('funnel', 'defined_and_equalto', page.funnel)|first %}
-            <li class="nav-item{% if currentpage == thisfunneltop %} active{% elif currentpage.funnel is defined and currentpage.funnel == thisfunneltop.name %} active-parent{% endif %}">
-              <a class="nav-link" href="{{ thisfunneltop.html }}">{{ thisfunneltop.name }}</a>
-            </li>
-            {% set _ = funnels.append(page.funnel) %}
-          {% endif %}
-        {% endfor %}
-        <li class="nav-item">
-          <a class="nav-link" href="/blog/">{{target.strings.blog}}</a>
-        </li>
-      </ul><!-- /.navbar-nav -->
-      {% include 'template-github-edit.html' %}
-      <form class="navbar-form navbar-right" id="navbar-search" role="search" method="get" action="https://www.google.com/search">
-        <div class="form-inline">
-          <label class="sr-only" for="topsearchbar">{{target.strings.search}}</label>
-          <input name="q" value="site:xrpl.org" type="hidden">
-          <input id="topsearchbar" name="q" type="text" class="form-control" class="top-search" placeholder="{{target.strings.search}}">
-          <button type="submit" class="btn btn-default fa fa-search">&nbsp;</button>
-        </div>
-      </form>
-      <div class="nav navbar-nav language-selector">
-        <div class="dropdown">
-          <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="language_selector_header_btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            {{(config.languages|selectattr('code', 'eq', target.lang)|first).display_name}}
-          </button>
-          <div class="dropdown-menu" aria-labelledby="language_selector_header_btn">
-            {% for lang in config.languages %}
-            <a class="dropdown-item" href="{{lang.prefix}}{{currentpage.html}}">{{lang.display_name}}</a>
-            {% endfor %}
-          </div><!--/.dropdown-menu-->
-        </div><!--/.dropdown-->
-      </div><!--/.language-selector-->
-    </div><!--/#navbarHolder-->
-    <div class="menu-overlay"></div>
-  </nav>
+  {% include 'template-header.html' %}
 
   <div class="container-fluid" role="document" id="main_content_wrapper">
     <div class="row">
@@ -126,9 +80,11 @@
 
 <!-- Non-blocking resources -->
 <!-- Bootstrap JS -->
-<script src="assets/vendor/bootstrap.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<!-- Dactyl JS -->
+<script src="assets/js/dactyl.js"></script>
 <!-- fontawesome icons -->
-<link rel="stylesheet" href="assets/vendor/fontawesome/css/font-awesome.min.css" />
+<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
 
 {% block endbody %}{% endblock %}
 </body>

@@ -2,13 +2,9 @@
 {% block head %}
 
     <!-- syntax highlighting -->
-    <link rel="stylesheet" href="assets/vendor/docco.min.css" />
-    <script src="assets/vendor/highlight.min.js"></script>
+    <link rel="stylesheet" href="assets/css/docco.min.css" />
+    <script src="assets/js/highlight.min.js"></script>
 
-    <!-- expandable code samples -->
-    <script src="assets/js/expandcode.js"></script>
-    <!-- multi-code selection tabs -->
-    <script src="assets/js/multicodetab.js"></script>
     <script>
         $(document).ready(function() {
             $(".multicode").minitabs();
@@ -47,7 +43,9 @@
 {% endblock %}
 
 {% block endbody %}
+{% if target.google_analytics_tag is defined %}
 <script type="application/javascript">
   gtag('set', {'content_group1': 'Content Docs'});
 </script>
+{% endif %}
 {% endblock %}
