@@ -23,7 +23,7 @@ callout_types:
 default_filters:
     - multicode_tabs
     - unicode_header_ids
-    - buttonize
+    - buttonize_bootstrap
     - callouts
     - badges
     - link_replacement
@@ -48,6 +48,8 @@ targets:
             - demote_headers
         demote_headers_pdf_only: true
         repository: https://github.com/mduo13/dactyl-starter-kit #Official repo URL here
+        logo: assets/img/dactyl-starter-kit-logo.svg
+        url: https://mduo13.github.io/dactyl-starter-kit/ # MUST have a trailing slash
         strings:
             bc_home: "Home"
             footer:
@@ -56,6 +58,7 @@ targets:
             to_top:
                 short: "Top"
                 long: "Jump to top of page"
+            github_edit: "Edit"
 
 cover_page:
     name: Home
@@ -68,11 +71,13 @@ pages:
         html: concepts.html
         category: Concepts
         template: template-landing-children.html
+        parent: index.html
         targets:
             - en
 
     -   md: concepts/concept1.md
         category: Concepts
+        parent: concepts.html
         targets:
             - en
 
@@ -80,10 +85,12 @@ pages:
         html: tutorials.html
         category: Tutorials
         template: template-landing-children.html
+        parent: index.html
         targets:
             - en
 
     -   md: tutorials/tutorial1.md
+        parent: tutorials.html
         category: Tutorials
         targets:
             - en
@@ -92,11 +99,13 @@ pages:
         html: references.html
         category: References
         template: template-landing-children.html
+        parent: index.html
         targets:
             - en
 
     -   md: references/reference1.md
         category: References
+        parent: references.html
         targets:
             - en
 

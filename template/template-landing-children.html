@@ -15,11 +15,11 @@
 
   {% else %}
   <section class="pt-3 p-md-3">
-    <article class="content">
+    <article class="dactyl-content">
       <h1 id="main-page-header">{{ currentpage.name }}</h1>
       <p class="blurb">{{ currentpage.blurb }}</p>
       {% set show_blurbs = True %}
-      {% set depth= 1 %}
+      {% set depth = 2 %}
       {% include 'template-page-children.html' %}
     </article>
   </section>

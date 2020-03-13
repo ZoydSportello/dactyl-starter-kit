@@ -1,5 +1,10 @@
+{% if target.repository is defined %}
 <div class="github-edit-wrap">
-  {% if target.github_forkurl is defined %}
+    {% if target.github_branch is undefined %}
+      {% set gh_branch = "master" %}
+    {% else %}
+      {% set gh_branch = target.github_branch %}
+    {% endif %}
     {% set have_edit_link = False %}
     {% if currentpage.md is defined %}
         {% if currentpage.md.startswith("http://") or
@@ -7,22 +12,22 @@
           {# Leave have_edit_link = False #}
         {% else %}
           {% set have_edit_link = True %}
-          {% set githuburl = target.github_forkurl + "/edit/"
-            + target.github_branch
-            + "/content/" + currentpage.md %}
+          {% set githuburl = target.repository + "/edit/"
+            + gh_branch
+            + "/" + config.content_path + "/" + currentpage.md %}
         {% endif %}
     {% elif currentpage.template is defined %}
       {% set have_edit_link = True %}
-      {% set githuburl = target.github_forkurl + "/edit/"
-        + target.github_branch + "/tool/" + currentpage.template %}
+      {% set githuburl = target.repository + "/edit/"
+        + gh_branch + "/"+ config.template_path + "/" + currentpage.template %}
     {% endif %}
-    {% if target.is_pr_build is defined and target.is_pr_build and have_edit_link %}
+    {# TODO: figure out PR editor URL {% if target.is_pr_build is defined and target.is_pr_build and have_edit_link %}
       {% set githuburl = githuburl + "?pr=/ripple/ripple-dev-portal/pull/"
         + target.github_pr_id %}
-    {% endif %}
+    {% endif %} END TODO #}
     {% if not have_edit_link %}
-      {% set githuburl = target.github_forkurl %}
+      {% set githuburl = target.repository %}
     {% endif %}
     <a href="{{githuburl}}" target="_blank" class="github-edit">{{target.strings.github_edit}}</a>
-  {% endif %}
 </div><!-- /.github-edit -->
+{% endif %}

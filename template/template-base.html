@@ -44,7 +44,7 @@
 
 </head>
 
-<body class="dactyl {% if currentpage.sidebar is undefined or currentpage.sidebar != "disabled" %}sidebar-primary {% endif %} lang-{{target.lang}} {% block bodyclasses %}{% endblock %}">
+<body class="{% if currentpage.sidebar is undefined or currentpage.sidebar != "disabled" %}sidebar-primary {% endif %} lang-{{target.lang}} {% block bodyclasses %}{% endblock %}">
 
   {% include 'template-header.html' %}
 

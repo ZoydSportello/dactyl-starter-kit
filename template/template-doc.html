@@ -13,22 +13,14 @@
         });
     </script>
 
-
 {% endblock %}
 
 {% block main %}
-  <article class="pt-3 p-md-3">
-    {% if target.lang != "en" and "en" in currentpage.targets %}
-    {# Add a "sorry this page isn't translated" banner. #}
-    {# TODO: pull from a strings file #}
-    <div class="devportal-callout note mb-5"><strong>{{target.strings.tl_banner.head}}</strong>
-      <p class="mb-0">{{target.strings.tl_banner.body}}</p>
-    </div><!--/.devportal-callout-->
-    {% endif %}
-    <div class="content">
-        {{ content }}
-    </div>
-  </article>
+  <section class="pt-3 p-md-3">
+    <article class="dactyl-content">
+      {{ content }}
+    </article>
+  </section>
 {% endblock %}
 
 {% block right_sidebar %}

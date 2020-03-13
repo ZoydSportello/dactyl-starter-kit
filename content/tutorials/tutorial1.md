@@ -1,4 +1,4 @@
-# Tutorial Placeholder
+# Placeholder Tutorial
 
 [Tutorials](tutorials.html) are step-by-step instructions for how to complete a task.
 
@@ -7,7 +7,10 @@
 To complete this tutorial, you must meet the following prerequisites:
 
 - Can read English.
+
 - Can think abstractly.
+
+    Abstract thinking involves the ability to map concepts to a variety of applicable situations and cases.
 
 ## Steps
 
