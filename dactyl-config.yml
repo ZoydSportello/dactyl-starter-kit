@@ -95,6 +95,24 @@ pages:
         targets:
             - en
 
+    -   md: tutorials/tutorial2.md
+        targets:
+            - en
+
+    -   md: tutorials/tutorial2.md
+        parent: tutorials-tutorial2.html
+        html: tutorials-nested-tutorial.html
+        name: Nested Tutorial
+        targets:
+            - en
+
+    -   md: tutorials/tutorial2.md
+        parent: tutorials-nested-tutorial.html
+        html: tutorials-deeply-nested-tutorial.html
+        name: Deeply Nested Tutorial
+        targets:
+            - en
+
     -   name: References
         html: references.html
         category: References
@@ -113,6 +131,7 @@ pages:
     -   name: 404 Not Found
         html: 404.html
         template: template-404.html
+        nav_omit: true
         targets:
             - en
 
@@ -120,5 +139,6 @@ pages:
     -   name: Sitemap
         html: sitemap.txt
         template: template-sitemap.txt
+        nav_omit: true
         targets:
             - en

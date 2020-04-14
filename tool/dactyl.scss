@@ -54,9 +54,6 @@ $navbar-light-color: $gray-600;
 
 $navbar-padding-y: 0;
 $navbar-nav-link-padding-x: 1rem;
-$border-radius: 0;
-$border-radius-lg: 0;
-$border-radius-sm: 0;
 
 // Bootstrap v4 ================================================================
 @import "node_modules/bootstrap/scss/bootstrap.scss";
@@ -185,7 +182,7 @@ $border-radius-sm: 0;
 
   .dactyl-callout {
     border-style: solid;
-    border-radius: 0;
+    border-radius: $border-radius;
     border-width: 1px;
     border-left-width: 4px;
     padding: 5px;
@@ -536,6 +533,7 @@ aside a.active-parent {
 /* Edit on GitHub link ------------------------------------------------------ */
 .github-edit-wrap {
   border: 1px solid $gray-400;
+  border-radius: $border-radius;
   margin-right: 5px;
   margin-left: 5px;
 }
@@ -814,6 +812,10 @@ pre, code {
   list-style-type: none;
 }
 
+.sidebar_pagelist .sidebar_pagelist {
+  margin-left: 16px;
+}
+
 #sidenav a,
 .sidenav_parent a {
   text-decoration: none;
@@ -873,11 +875,22 @@ pre, code {
 #sidenav .card-header h5 .sidenav_cat_title {
   display: block;
   padding: 11px 10px 11px 40px;
+  text-indent: -10px;
+}
+#sidenav .grandchildren-container h5 .sidenav_cat_title:hover {
+  padding-left: 39px;
+}
+#sidenav .grandchildren-container h5 .sidenav_cat_title.active:hover {
+  padding-left: 40px;
+}
+
+#sidenav .grandchildren-container .card-header h5 .sidenav_cat_title {
+  text-indent: 0;
 }
 
 #sidenav .card-header .sidenav_cat_toggler {
   position: absolute;
-  left: 0;
+  left: -10px;
   padding: 10px 12px 12px 12px;
   line-height: 0;
 
@@ -885,6 +898,10 @@ pre, code {
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
   transition-duration: 0.3s;
+}
+
+#sidenav .grandchildren-container .sidenav_cat_toggler {
+  left: 0;
 }
 
 #sidenav .card-header .sidenav_cat_toggler {
@@ -907,6 +924,21 @@ pre, code {
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
   transition-duration: 0.3s;
+}
+
+.sidenav-parent a {
+  padding: 15px 11px 15px 0px;
+  font-size: 18px;
+  display: block;
+}
+
+.sidenav-parent a:before {
+  font-family: FontAwesome;
+  padding-right: 5px;
+  padding-left: 5px;
+  content:"\f148";
+  transform: scaleX(-1);
+  display: inline-block;
 }
 
 .sidebar-primary .main {
