@@ -1,5 +1,7 @@
 # Dactyl Starter Kit
 
+**WARNING:** THIS IS A WORK IN PROGRESS. USE AT YOUR OWN RISK. Not all statements in this README are true (yet).
+
 This is a repository template that provides a basis for documentation projects using [Dactyl](https://github.com/ripple/dactyl/). This "opinionated" standard for a documentation site can be styled for different aesthetics while providing a consistent functional experience for users and a consistent editing experience for contributors.
 
 The contents of the Dactyl Starter Kit are as follows:
@@ -25,4 +27,4 @@ The contents of the Dactyl Starter Kit are as follows:
 - **Analytics:** The default templates use Google Tag Manager for collecting usage data and include advanced features such as tagging content by category and page type.
 - **Internationalization:** The config has places for strings files and optional template pieces for multiple language support.
 
-This repository (will be) published under a permissive open-source license such as MIT.
+This repository is published under a permissive open-source license such as MIT.
