@@ -127,6 +127,17 @@ pages:
         targets:
             - en
 
+    -   name: REST API Tool Example
+        html: rest-api-tool.html
+        parent: index.html
+        template: template-rest-api-tool.html
+        # The following keys configure the REST tool
+        methods_js: js/apitool-methods-example.js
+        rest_host: https://reqres.in
+        doc_base: references-reference1.html
+        targets:
+            - en
+
 # Custom 404 page
     -   name: 404 Not Found
         html: 404.html
