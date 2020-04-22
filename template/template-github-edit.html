@@ -28,6 +28,6 @@
     {% if not have_edit_link %}
       {% set githuburl = target.repository %}
     {% endif %}
-    <a href="{{githuburl}}" target="_blank" class="github-edit">{{target.strings.github_edit}}</a>
+    <a href="{{githuburl}}" target="_blank" class="github-edit">{% trans %}Edit{% endtrans %}</a>
 </div><!-- /.github-edit -->
 {% endif %}

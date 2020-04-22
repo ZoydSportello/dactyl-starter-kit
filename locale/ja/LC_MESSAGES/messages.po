@@ -1,0 +1,40 @@
+# Japanese translations for Dactyl Starter Kit.
+# Copyright (C) 2020 Xpring
+# This file is distributed under the same license as the Dactyl Starter Kit
+# project.
+# Rome Reginelli <rome@ripple.com>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Dactyl Starter Kit VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2020-04-21 16:13-0700\n"
+"PO-Revision-Date: 2020-04-21 16:22-0700\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: template/template-doc.html:29
+msgid "In this page:"
+msgstr "目次"
+
+#: template/template-footer.html:45
+msgid "LICENSE"
+msgstr "ライセンス"
+
+#: template/template-footer.html:52
+msgid "Top"
+msgstr "先頭へ"
+
+#: template/template-github-edit.html:31
+msgid "Edit"
+msgstr "Edit"
+
+#: template/template-header.html:19 template/template-header.html:21
+msgid "Search"
+msgstr "検索"

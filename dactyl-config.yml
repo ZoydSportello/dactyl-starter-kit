@@ -33,9 +33,9 @@ languages:
     -   code: en
         display_name: English
         prefix: "/"
-#    -   code: ja
-#        display_name: 日本語
-#        prefix: "/ja/"
+    -   code: ja
+        display_name: 日本語
+        prefix: "/ja/"
 #    -   code: es-419
 #        display_name: Español (Latinoamerica)
 #        prefix: "/es-419/"
@@ -50,15 +50,18 @@ targets:
         repository: https://github.com/mduo13/dactyl-starter-kit #Official repo URL here
         logo: assets/img/dactyl-starter-kit-logo.svg
         url: https://mduo13.github.io/dactyl-starter-kit/ # MUST have a trailing slash
-        strings:
-            bc_home: "Home"
-            footer:
-                copyright: Ripple
-                license: LICENSE
-            to_top:
-                short: "Top"
-                long: "Jump to top of page"
-            github_edit: "Edit"
+        locale_file: locale/en/LC_MESSAGES/messages.mo
+
+    -   name: ja
+        lang: ja
+        display_name: Dactyl スターター・キット
+        filters:
+            - demote_headers
+        demote_headers_pdf_only: true
+        repository: https://github.com/mduo13/dactyl-starter-kit #Official repo URL here
+        logo: assets/img/dactyl-starter-kit-logo.svg
+        url: https://mduo13.github.io/dactyl-starter-kit/ # MUST have a trailing slash
+        locale_file: locale/ja/LC_MESSAGES/messages.mo
 
 cover_page:
     name: Home
@@ -75,11 +78,20 @@ pages:
         targets:
             - en
 
+    -   name: コンセプト
+        html: concepts.html
+        category: Concepts
+        template: template-landing-children.html
+        parent: index.html
+        targets:
+            - ja
+
     -   md: concepts/concept1.md
         category: Concepts
         parent: concepts.html
         targets:
             - en
+            - ja
 
     -   name: Tutorials
         html: tutorials.html
@@ -89,15 +101,25 @@ pages:
         targets:
             - en
 
+    -   name: チュートリアル
+        html: tutorials.html
+        category: Tutorials
+        template: template-landing-children.html
+        parent: index.html
+        targets:
+            - ja
+
     -   md: tutorials/tutorial1.md
         parent: tutorials.html
         category: Tutorials
         targets:
             - en
+            - ja
 
     -   md: tutorials/tutorial2.md
         targets:
             - en
+            - ja
 
     -   md: tutorials/tutorial2.md
         parent: tutorials-tutorial2.html
@@ -105,6 +127,7 @@ pages:
         name: Nested Tutorial
         targets:
             - en
+            - ja
 
     -   md: tutorials/tutorial2.md
         parent: tutorials-nested-tutorial.html
@@ -112,6 +135,7 @@ pages:
         name: Deeply Nested Tutorial
         targets:
             - en
+            - ja
 
     -   name: References
         html: references.html
@@ -121,11 +145,20 @@ pages:
         targets:
             - en
 
+    -   name: リファレンス
+        html: references.html
+        category: References
+        template: template-landing-children.html
+        parent: index.html
+        targets:
+            - ja
+
     -   md: references/reference1.md
         category: References
         parent: references.html
         targets:
             - en
+            - ja
 
     -   name: REST API Tool Example
         html: rest-api-tool.html
@@ -137,6 +170,7 @@ pages:
         doc_base: references-reference1.html
         targets:
             - en
+            - ja
 
 # Custom 404 page
     -   name: 404 Not Found

@@ -41,12 +41,12 @@
     </nav>
 
     <div class="absolute_bottom_footer">
-      <span>&copy; {{target.strings.footer.copyright}}</span>
-      <span><a href="{{target.repository}}/master/LICENSE">{{target.strings.footer.license}}</a></span>
+      {% if target.copyright is defined %}<span>&copy; {{target.copyright}}</span>{% endif %}
+      <span><a href="{{target.repository}}/master/LICENSE">{% trans %}LICENSE{% endtrans %}</a></span>
     </div><!-- /.absolute_bottom_footer -->
 
   </section>
 </footer>
 
 <!-- Jump to top button -->
-<a href="#main_content_wrapper" class="jump-to-top btn btn-primary btn-lg" role="button" title="{{target.strings.to_top.short}}">{{target.strings.to_top.short}}</a>
+<a href="#main_content_wrapper" class="jump-to-top btn btn-primary btn-lg" role="button" title="{% trans %}Return to top of page{% endtrans %}">{% trans %}Top{% endtrans %}</a>

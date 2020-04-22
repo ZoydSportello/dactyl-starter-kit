@@ -16,9 +16,9 @@
     {% include 'template-github-edit.html' %}
     <form class="navbar-form navbar-right" id="navbar-search" role="search" method="get" action="https://www.google.com/search">
       <div class="form-inline">
-        <label class="sr-only" for="topsearchbar">{{target.strings.search}}</label>
+        <label class="sr-only" for="topsearchbar">{% trans %}Search{% endtrans %}</label>
         <input name="q" value="site:{{target.url}}" type="hidden">
-        <input id="topsearchbar" name="q" type="text" class="form-control" class="top-search" placeholder="{{target.strings.search}}">
+        <input id="topsearchbar" name="q" type="text" class="form-control" class="top-search" placeholder="{% trans %}Search{% endtrans %}">
         <button type="submit" class="btn btn-default fa fa-search">&nbsp;</button>
       </div>
     </form>
