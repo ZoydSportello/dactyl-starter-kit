@@ -51,6 +51,10 @@ targets:
         logo: assets/img/dactyl-starter-kit-logo.svg
         url: https://mduo13.github.io/dactyl-starter-kit/ # MUST have a trailing slash
         locale_file: locale/en/LC_MESSAGES/messages.mo
+        # google_analytics_tag: "UA-00000000-0"
+        ## Enable (and provide your own values) to use Algolia DocSearch:
+        # algolia_api_key: 00000000000000000000000000000000
+        # algolia_index_name: sitename
 
     -   name: ja
         lang: ja
@@ -62,6 +66,9 @@ targets:
         logo: assets/img/dactyl-starter-kit-logo.svg
         url: https://mduo13.github.io/dactyl-starter-kit/ # MUST have a trailing slash
         locale_file: locale/ja/LC_MESSAGES/messages.mo
+        # google_analytics_tag: "UA-00000000-0"
+        # algolia_api_key: 00000000000000000000000000000000
+        # algolia_index_name: sitename
 
 cover_page:
     name: Home

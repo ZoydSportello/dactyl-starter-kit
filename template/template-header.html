@@ -1,6 +1,6 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white my-lg-0 mx-2 p-lg-0">
   <a href="{% if target.no_cover is defined and target.no_cover %}/{% else %}index.html{% endif %}" class="navbar-brand"><img src="{{target.logo}}" class="logo"  height="44" alt="{{target.display_name}}" /></a>
-  <button class="navbar-toggler" type="button" data-toggle="slide-collapse" data-target="#navbarHolder" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHolder" aria-controls="navbarHolder" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse justify-content-end" id="navbarHolder">
@@ -14,28 +14,13 @@
       {% endfor %}
     </ul><!-- /.navbar-nav -->
     {% include 'template-github-edit.html' %}
-    <form class="navbar-form navbar-right" id="navbar-search" role="search" method="get" action="https://www.google.com/search">
-      <div class="form-inline">
-        <label class="sr-only" for="topsearchbar">{% trans %}Search{% endtrans %}</label>
-        <input name="q" value="site:{{target.url}}" type="hidden">
-        <input id="topsearchbar" name="q" type="text" class="form-control" class="top-search" placeholder="{% trans %}Search{% endtrans %}">
-        <button type="submit" class="btn btn-default fa fa-search">&nbsp;</button>
-      </div>
-    </form>
-    <div class="nav navbar-nav language-selector">
-      <div class="dropdown">
-        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="language_selector_header_btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          {% if target.lang is defined %}
-          {{(config.languages|selectattr('code', 'eq', target.lang)|first).display_name}}
-          {% endif %}
-        </button>
-        <div class="dropdown-menu" aria-labelledby="language_selector_header_btn">
-          {% for lang in config.languages %}
-          <a class="dropdown-item" href="{{lang.prefix}}{{currentpage.html}}">{{lang.display_name}}</a>
-          {% endfor %}
-        </div><!--/.dropdown-menu-->
-      </div><!--/.dropdown-->
-    </div><!--/.language-selector-->
+    {% if target.algolia_api_key is defined %}
+      {% include 'template-algolia-docsearch.html' %}
+    {% else %}
+      {% include 'template-google-search.html' %}
+    {% endif %}
+    {% if config.languages is defined and config.languages|length > 1 %}
+      {% include 'template-language-dropdown.html' %}
+    {% endif %}
   </div><!--/#navbarHolder-->
-  <div class="menu-overlay"></div>
 </nav>

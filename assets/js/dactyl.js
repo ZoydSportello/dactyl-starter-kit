@@ -1,14 +1,14 @@
 // Events ----------------------------------------------------------------------
 $(document).ready(() => {
-  // Mobile menu.
-  $('[data-toggle="slide-collapse"]').on('click', () => {
-    $navMenuCont = $($(this).data('target'))
-    $navMenuCont.toggleClass('show')
-    $(".menu-overlay").toggleClass('active')
-  })
-  $(".menu-overlay").click(function(event) {
-    $(".navbar-toggler").trigger("click")
-  })
+  // // Mobile menu.
+  // $('[data-toggle="slide-collapse"]').on('click', () => {
+  //   $navMenuCont = $($(this).data('target'))
+  //   $navMenuCont.toggleClass('show')
+  //   $(".menu-overlay").toggleClass('active')
+  // })
+  // $(".menu-overlay").click(function(event) {
+  //   $(".navbar-toggler").trigger("click")
+  // })
 
   // Jump to Top Button
   var TO_TOP_MIN = 50
