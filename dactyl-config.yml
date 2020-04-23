@@ -74,6 +74,7 @@ cover_page:
     name: Home
     html: index.html
     template: template-landing-children.html
+    pdf_template: template-pdf-cover.html
     sidebar: disabled
 
 pages:
@@ -81,6 +82,7 @@ pages:
         html: concepts.html
         category: Concepts
         template: template-landing-children.html
+        pdf_template: template-pdf-landing.html
         parent: index.html
         targets:
             - en
@@ -89,6 +91,7 @@ pages:
         html: concepts.html
         category: Concepts
         template: template-landing-children.html
+        pdf_template: template-pdf-landing.html
         parent: index.html
         targets:
             - ja
@@ -104,6 +107,7 @@ pages:
         html: tutorials.html
         category: Tutorials
         template: template-landing-children.html
+        pdf_template: template-pdf-landing.html
         parent: index.html
         targets:
             - en
@@ -112,6 +116,7 @@ pages:
         html: tutorials.html
         category: Tutorials
         template: template-landing-children.html
+        pdf_template: template-pdf-landing.html
         parent: index.html
         targets:
             - ja
@@ -148,6 +153,7 @@ pages:
         html: references.html
         category: References
         template: template-landing-children.html
+        pdf_template: template-pdf-landing.html
         parent: index.html
         targets:
             - en
@@ -156,6 +162,7 @@ pages:
         html: references.html
         category: References
         template: template-landing-children.html
+        pdf_template: template-pdf-landing.html
         parent: index.html
         targets:
             - ja

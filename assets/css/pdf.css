@@ -14,3 +14,56 @@ a[href^="#"]:after {
   background: transparent;
   box-decoration-break: slice;
 }
+
+td, th {
+  border: 1px solid;
+  padding: 4px;
+}
+
+thead {
+  background-color: #e0e0e0;
+}
+
+.pdf-cover-wrapper {
+    page: pdf-cover;
+}
+.pdf-content-wrapper {
+    page: pdf-content;
+}
+
+/*Cover page full width and no page number*/
+@page pdf-cover {
+  margin: 0;
+  @bottom-right {
+    content: none;
+  }
+  @bottom-left {
+    content: none;
+  }
+}
+.cover-page .title-area {
+  position: absolute;
+  top: 26%;
+  left: 8%;
+  font-size: 120px;
+  max-width: 1300px;
+  border-top: 20px solid black;
+  border-bottom: 20px solid black;
+}
+
+/*Page numbers */
+@page:right {
+  @bottom-right {
+    content: counter(page);
+    font-size: 16px;
+    color: #707070;
+  }
+}
+
+@page:left {
+  @bottom-right {
+    content: counter(page);
+    font-size: 16px;
+    color: #707070;
+  }
+}

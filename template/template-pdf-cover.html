@@ -1,0 +1,24 @@
+{% extends 'template-pdf.html' %}
+
+{% block bodyclasses %}pdf-cover{% endblock %}
+{% block body %}
+<div class="pdf-cover-wrapper">
+    <div class="cover-page">
+        <div class="title-area">
+            <h1>{{ target.display_name }}</h1>
+            <h3>{{ current_time }}</h3>
+        </div>
+    </div>
+</div><!-- pdf-cover wrapper-->
+
+{% if pages|length > 2 %}
+{# PDF ToC shows Pages; don't bother if there's less than "one plus the cover page" #}
+<div class="pdf-table-of-contents">
+    <h1>Table of Contents</h1>
+    {% set show_blurbs = True %}
+    {% set depth = 99 %}
+    {% include 'template-page-children.html' %}
+</div>
+{% endif %}
+
+{% endblock %}

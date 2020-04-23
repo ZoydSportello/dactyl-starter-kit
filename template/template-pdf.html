@@ -29,17 +29,20 @@
 
 </head>
 
-<body class="dactyl {% if currentpage.sidebar is undefined or currentpage.sidebar != "disabled" %}sidebar-primary {% endif %}{% block bodyclasses %}{% endblock %}">
-
+<body class="dactyl {% block bodyclasses %}{% endblock %}">
+    {% block body %}
     <div class="container-fluid" role="document" id="main_content_wrapper">
       <div class="row">
-        <main class="main content {% if currentpage.sidebar is defined and currentpage.sidebar == "disabled" %}col-md-12{% else %}col-md-7 col-lg-6{% endif %} order-md-3  {% block mainclasses %}{% endblock %}" role="main" id="main_content_body">
+        <main class="main content col-md-12 {% block mainclasses %}{% endblock %}" role="main" id="main_content_body">
+          {% block main %}
             {{ content }}
+          {% endblock %}
         </main>
       </div>
     </div>
+    {% endblock %}
 
-    <footer>(Exported {{ current_time }})</footer>
+    <footer>{% block footer %}(Exported {{ current_time }}){% endblock %}</footer>
 
 <!-- Non-blocking resources -->
 <!-- Bootstrap JS -->
