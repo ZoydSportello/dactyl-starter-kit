@@ -101,6 +101,11 @@ pages:
         parent: concepts.html
         targets:
             - en
+
+    -   md: concepts/concept1.ja.md
+        category: Concepts
+        parent: concepts.html
+        targets:
             - ja
 
     -   name: Tutorials
