@@ -1156,36 +1156,34 @@ Adapted for Dactyl Starter Kit
 
 @media (max-width: 991px) {
 
-#main_content_wrapper {
-  padding: 0 24px;
-}
-.navbar-brand img {
-  width: 120px;
-}
+  #main_content_wrapper {
+    padding: 0 24px;
+  }
+  .navbar-brand img {
+    width: 120px;
+  }
 
-.sidebar-primary .main {
-  border-left: none;
-  border-right: none;
-}
+  .sidebar-primary .main {
+    border-left: none;
+    border-right: none;
+  }
 
-.right-sidebar .card {
-  padding-left: 0;
-}
+  .right-sidebar .card {
+    padding-left: 0;
+  }
 
-#main_content_body {
-  padding: 0;
-  border-left: 0;
-  border-bottom: 1px solid $gray-200
-}
-#main_content_body .container-fluid {
-  padding-left: 0;
-}
+  #main_content_body {
+    padding: 0;
+    border-left: 0;
+    border-bottom: 1px solid $gray-200
+  }
+  #main_content_body .container-fluid {
+    padding-left: 0;
+  }
 
-.dactyl-footer {
-  margin: 0 24px;
-}
-
-
+  .dactyl-footer {
+    margin: 0 24px;
+  }
 
   #page-toc-wrapper {
     position: static;
