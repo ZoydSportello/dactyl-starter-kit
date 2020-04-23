@@ -48,7 +48,7 @@
     <div class="row">
       <!-- Right sidebar first so it's at the beginning for mobile layouts -->
       {% if currentpage.sidebar is undefined or (currentpage.sidebar != "disabled" and currentpage.sidebar != "left_only") %}
-      <aside class="right-sidebar col-lg-3 order-lg-4 p-0" role="complementary">
+      <aside class="right-sidebar col-lg-3 order-lg-4 p-3" role="complementary">
           {% block right_sidebar %}{% endblock %}
       </aside>
       {% endif %}

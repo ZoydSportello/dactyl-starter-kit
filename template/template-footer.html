@@ -1,27 +1,5 @@
 {% set flag_n = cycler(* range(1,99)) %}
-<footer class="dactyl-footer" role="contentinfo">
-  <section class="container-fluid card-grid card-grid-Nx1">
-    {% set funnels = [] %}
-    {% for page in pages %}
-      {% if page.funnel is defined and page.funnel not in funnels %}
-        {% set parent_page = pages|selectattr('funnel', 'defined_and_equalto', page.funnel)|first %}
-
-        <div class="card">
-          <div class="card-header">
-            <h5><a href="{{ parent_page.html }}">{{ parent_page.name }}</a></h5>
-          </div><!--/.card-header-->
-          <div class="card-body">
-            {% set depth = 1 %}
-            {% set count = 5 %}
-            {% include 'template-page-children.html' %}
-          </div><!--/.card-body-->
-          <div class="flag-vertical">{{"%02d"|format(flag_n.next())}}</div>
-        </div><!--/.card -->
-
-        {% set _ = funnels.append(page.funnel) %}
-      {% endif %}
-    {% endfor %}
-  </section>
+<footer class="dactyl-footer px-2" role="contentinfo">
 
   <section class="container-fluid p-5 pl-sm-0">
 
