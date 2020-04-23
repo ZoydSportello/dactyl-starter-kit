@@ -14,11 +14,13 @@
       {% endfor %}
     </ul><!-- /.navbar-nav -->
     {% include 'template-github-edit.html' %}
+    {% block searchbar %}
     {% if target.algolia_api_key is defined %}
       {% include 'template-algolia-docsearch.html' %}
     {% else %}
       {% include 'template-google-search.html' %}
     {% endif %}
+    {% endblock %}
     {% if config.languages is defined and config.languages|length > 1 %}
       {% include 'template-language-dropdown.html' %}
     {% endif %}
