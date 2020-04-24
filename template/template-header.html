@@ -21,7 +21,7 @@
       {% include 'template-google-search.html' %}
     {% endif %}
     {% endblock %}
-    {% if config.languages is defined and config.languages|length > 1 %}
+    {% if config.languages is defined and config.languages|length > 1 and target.lang is defined %}
       {% include 'template-language-dropdown.html' %}
     {% endif %}
   </div><!--/#navbarHolder-->
