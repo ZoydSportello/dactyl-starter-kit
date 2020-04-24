@@ -1,3 +1,8 @@
+---
+category: Concepts
+html: concepts-concept1.html
+parent: tutorials.html
+---
 # プレースホルダー コンセプト １
 
 [コンセプトドキュメント](concepts.html)は、技術が何やなぜやどうやっての質問に答えを捧ぎます。画像があるほうが多い。

@@ -97,14 +97,10 @@ pages:
             - ja
 
     -   md: concepts/concept1.md
-        category: Concepts
-        parent: concepts.html
         targets:
             - en
 
     -   md: concepts/concept1.ja.md
-        category: Concepts
-        parent: concepts.html
         targets:
             - ja
 
@@ -154,12 +150,7 @@ pages:
             - en
             - ja
 
-    -   name: References
-        html: references.html
-        category: References
-        template: template-landing-children.html
-        pdf_template: template-pdf-landing.html
-        parent: index.html
+    -   md: references/index.md
         targets:
             - en
 
@@ -173,8 +164,6 @@ pages:
             - ja
 
     -   md: references/reference1.md
-        category: References
-        parent: references.html
         targets:
             - en
             - ja

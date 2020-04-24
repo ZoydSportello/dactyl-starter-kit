@@ -1,3 +1,8 @@
+---
+category: References
+parent: references.html
+html: reference1.html
+---
 # Reference Placeholder
 
 [References](references.html) are exhaustive lists of information. For example, an API reference should list all methods, fields, types of values, special cases, and error information.

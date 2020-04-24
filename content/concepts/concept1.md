@@ -1,3 +1,7 @@
+---
+category: Concepts
+parent: concepts.html
+---
 # Placeholder Concept 1
 
 [Concept documents](concepts.html) provide information about what the technology is, why it exists, and how it works from a high level. Frequently, concept documents have diagrams to aid understanding.
