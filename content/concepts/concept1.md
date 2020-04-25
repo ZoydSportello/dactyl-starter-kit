@@ -1,6 +1,8 @@
 ---
 category: Concepts
 parent: concepts.html
+targets:
+    - en
 ---
 # Placeholder Concept 1
 

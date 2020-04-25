@@ -1,7 +1,7 @@
 ---
 category: Concepts
 html: concepts-concept1.html
-parent: tutorials.html
+parent: concepts.html
 ---
 # プレースホルダー コンセプト １
 

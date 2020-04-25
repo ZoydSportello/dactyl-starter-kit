@@ -43,6 +43,7 @@ languages:
 targets:
     -   name: en
         lang: en
+        prefix: "/"
         display_name: Dactyl Starter Kit #Your name here
         filters:
             - demote_headers
@@ -58,6 +59,7 @@ targets:
 
     -   name: ja
         lang: ja
+        prefix: "/ja/"
         display_name: Dactyl スターター・キット
         filters:
             - demote_headers
@@ -97,8 +99,6 @@ pages:
             - ja
 
     -   md: concepts/concept1.md
-        targets:
-            - en
 
     -   md: concepts/concept1.ja.md
         targets:
