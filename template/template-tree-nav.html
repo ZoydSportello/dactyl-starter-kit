@@ -1,9 +1,6 @@
 {% if tree_top is undefined %}
   {% set tree_top = pages|list|first %}
 {% endif %}
-{% if link_prefix is undefined %}
-  {% set link_prefix = "" %}
-{% endif %}
 
 {% macro page_w_children(pg, n, depth) %}
 <div class="card active">
@@ -19,7 +16,7 @@
     <a class="{% if not active_parent and currentpage != pg %}collapsed{% endif %} sidenav_cat_toggler" role="button" data-toggle="collapse" href="#sidenav_collapse_{{depth}}_{{n}}" aria-expanded="{% if active_parent or currentpage == pg %}true{% else %}false{% endif %}" aria-controls="sidenav_collapse_{{depth}}_{{n}}"></a>
     {% endif %}
     <h5 class="card-title">
-        <a class="sidenav_cat_title {% if currentpage == pg %}active{% elif active_parent%}active-parent{% endif %}" href="{{link_prefix}}{{ pg.html }}">{{ pg.name }}</a>
+        <a class="sidenav_cat_title {% if currentpage == pg %}active{% elif active_parent%}active-parent{% endif %}" href="{{target.prefix}}{{ pg.html }}">{{ pg.name }}</a>
     </h5>
   </div><!-- /.card-header -->
 
@@ -30,7 +27,7 @@
         {% if child.children %}
           <li class="grandchildren-container">{{ page_w_children(child, loop.index, depth+1) }}</li>
         {% else %}
-          <li class="leaf-child"><a class="{% if currentpage == (child) %} active{% endif %}" href="{{ link_prefix}}{{ child.html }}">{{ child.name }}</a></li>
+          <li class="leaf-child"><a class="{% if currentpage == (child) %} active{% endif %}" href="{{ target.prefix}}{{ child.html }}">{{ child.name }}</a></li>
         {% endif %}
       {% endfor %}
     </ul>
@@ -41,7 +38,7 @@
 
 <div class="dactyl-tree-nav">
   <div class="sidenav-parent">
-    <a href="{{tree_top.html}}">{{tree_top.name}}</a>
+    <a href="{{target.prefix}}{{tree_top.html}}">{{tree_top.name}}</a>
   </div>
   <div id="sidenav" role="tablist" aria-multiselectable="true">
     {% for page in tree_top.children %}

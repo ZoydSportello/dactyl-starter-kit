@@ -1,6 +1,14 @@
+---
+parent: tutorials/
+html: tutorials/1/
+category: Tutorials
+targets:
+    - en
+    - ja
+---
 # Placeholder Tutorial
 
-[Tutorials](tutorials.html) are step-by-step instructions for how to complete a task.
+[Tutorials](/tutorials/) are step-by-step instructions for how to complete a task.
 
 ## Prerequisites
 

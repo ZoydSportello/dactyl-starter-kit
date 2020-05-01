@@ -1,13 +1,15 @@
 ---
 category: References
-parent: references.html
-html: reference1.html
+parent: references/
+html: references/placeholder/
 ---
 # Reference Placeholder
 
-[References](references.html) are exhaustive lists of information. For example, an API reference should list all methods, fields, types of values, special cases, and error information.
+[References](/references) are exhaustive lists of information. For example, an API reference should list all methods, fields, types of values, special cases, and error information.
 
 Depending on the size of your API, you may want to split this information into separate pages.
+
+## Page Definition
 
 Each page definition in your Dactyl config file's `pages` array can have the following fields:
 
@@ -26,3 +28,32 @@ Each page definition in your Dactyl config file's `pages` array can have the fol
 | ...                      | (Various) | Additional arbitrary key-value pairs as desired. These values can be used by templates or pre-processing. |
 
 [Jinja]: http://jinja.pocoo.org/
+
+
+### Bonus Fields
+
+The following fields are automatically added after a page has been parsed to HTML. (They're not available when preprocessing or rendering Markdown to HTML, but _are_ available when rendering HTML templates.)
+
+| Field                    | Type      | Description                           |
+|:-------------------------|:----------|:--------------------------------------|
+| `plaintext` | String     | A plaintext-only version of the page's markdown content, with all Markdown and HTML syntax removed. |
+| `headermap` | Dictionary | A mapping of the page's headers to the unique IDs of those headers in the generated HTML version. |
+| `blurb`     | String     | An introductory blurb generated from the page's first paragraph of text. |
+| `children`  | List       | A list of pages, in order of appearance, that refer to this page as their `parent`. Each of these "child" pages is a reference to the page definition (dictionary) for that child. |
+| `is_ancestor_of` | Function | A function that takes one argument, the string identifying a potential child page by that child's `html` field. This function returns `True` if this page is a direct or indirect parent of the child page. |
+
+
+## Pre-processing
+
+Dactyl pre-processes Markdown files by treating them as [Jinja][] Templates, so you can use [Jinja's templating syntax](http://jinja.pocoo.org/docs/dev/templates/) to do advanced stuff like include other files or pull in variables from the config or commandline. Dactyl passes the following fields to Markdown files when it pre-processes them:
+
+| Field             | Value                                                    |
+|:------------------|:---------------------------------------------------------|
+| `target`          | The [target](#targets) definition of the current target. |
+| `pages`           | The [array of page definitions](#pages) in the current target. Use this to generate navigation across pages. (The default templates don't do this, but you should.) |
+| `currentpage`     | The definition of the page currently being rendered.     |
+| `categories`      | A de-duplicated array of categories that are used by at least one page in this target, sorted in the order they first appear. |
+| `config`          | The global Dactyl config object. |
+| `content`         | The parsed HTML content of the page currently being rendered. |
+| `current_time`    | The current date as of rendering. The format is YYYY-MM-DD by default; you can also set the `time_format` field to a custom [stftime format string](http://strftime.org/). |
+| `mode`            | The output format: either `html` (default), `pdf`, or `md`. |

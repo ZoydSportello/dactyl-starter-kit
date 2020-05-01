@@ -1,7 +1,7 @@
 ---
-name: References
-html: references/
-category: References
+name: Tutorials
+html: tutorials/
+category: Tutorials
 template: template-landing-children.html
 pdf_template: template-pdf-landing.html
 parent: index.html

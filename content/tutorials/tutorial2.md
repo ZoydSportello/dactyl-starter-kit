@@ -1,10 +1,14 @@
 ---
-parent: tutorials.html
+parent: tutorials/
+html: tutorials/2/
 category: Tutorials
+targets:
+    - en
+    - ja
 ---
 # Secondary Tutorial
 
-This is like [the other tutorial](tutorials-tutorial1.html), but it uses frontmatter to define some of its important stuff.
+This is like [the other tutorial](/tutorials/1/), but it uses frontmatter to define some of its important stuff.
 
 ## Prerequisites
 

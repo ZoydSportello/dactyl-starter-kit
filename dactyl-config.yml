@@ -49,7 +49,7 @@ targets:
             - demote_headers
         demote_headers_pdf_only: true
         repository: https://github.com/mduo13/dactyl-starter-kit #Official repo URL here
-        logo: assets/img/dactyl-starter-kit-logo.svg
+        logo: /assets/img/dactyl-starter-kit-logo.svg
         url: https://mduo13.github.io/dactyl-starter-kit/ # MUST have a trailing slash
         locale_file: locale/en/LC_MESSAGES/messages.mo
         # google_analytics_tag: "UA-00000000-0"
@@ -80,86 +80,48 @@ cover_page:
     sidebar: disabled
 
 pages:
-    -   name: Concepts
-        html: concepts.html
-        category: Concepts
-        template: template-landing-children.html
-        pdf_template: template-pdf-landing.html
-        parent: index.html
-        targets:
-            - en
+    -   md: concepts/index.md
 
-    -   name: コンセプト
-        html: concepts.html
-        category: Concepts
-        template: template-landing-children.html
-        pdf_template: template-pdf-landing.html
-        parent: index.html
+    -   md: concepts/index.md
+        name: コンセプト
         targets:
             - ja
 
     -   md: concepts/concept1.md
 
     -   md: concepts/concept1.ja.md
-        targets:
-            - ja
 
-    -   name: Tutorials
-        html: tutorials.html
-        category: Tutorials
-        template: template-landing-children.html
-        pdf_template: template-pdf-landing.html
-        parent: index.html
-        targets:
-            - en
+    -   md: tutorials/index.md
 
-    -   name: チュートリアル
-        html: tutorials.html
-        category: Tutorials
-        template: template-landing-children.html
-        pdf_template: template-pdf-landing.html
-        parent: index.html
+    -   md: tutorials/index.md
+        name: チュートリアル
         targets:
             - ja
 
     -   md: tutorials/tutorial1.md
-        parent: tutorials.html
-        category: Tutorials
-        targets:
-            - en
-            - ja
 
     -   md: tutorials/tutorial2.md
-        targets:
-            - en
-            - ja
 
     -   md: tutorials/tutorial2.md
-        parent: tutorials-tutorial2.html
-        html: tutorials-nested-tutorial.html
+        parent: tutorials/2/
+        html: tutorials/2/nested/
         name: Nested Tutorial
         targets:
             - en
             - ja
 
     -   md: tutorials/tutorial2.md
-        parent: tutorials-nested-tutorial.html
-        html: tutorials-deeply-nested-tutorial.html
+        parent: tutorials/2/nested/
+        html: tutorials/2/nested/deep/
         name: Deeply Nested Tutorial
         targets:
             - en
             - ja
 
     -   md: references/index.md
-        targets:
-            - en
 
-    -   name: リファレンス
-        html: references.html
-        category: References
-        template: template-landing-children.html
-        pdf_template: template-pdf-landing.html
-        parent: index.html
+    -   md: references/index.md
+        name: リファレンス
         targets:
             - ja
 
