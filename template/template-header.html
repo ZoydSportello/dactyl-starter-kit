@@ -1,5 +1,5 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white px-2">
-  <a href="{% if target.no_cover is defined and target.no_cover %}/{% else %}index.html{% endif %}" class="navbar-brand"><img src="{{target.logo}}" class="logo"  height="44" alt="{{target.display_name}}" /></a>
+  <a href="{{ target.prefix }}" class="navbar-brand"><img src="{{target.logo}}" class="logo"  height="44" alt="{{target.display_name}}" /></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHolder" aria-controls="navbarHolder" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -8,7 +8,7 @@
       {% for page in pages %}
         {% if page.parent is defined and page.parent == "index.html" %}
           <li class="nav-item{% if currentpage == page %} active{% endif %}">
-            <a class="nav-link" href="{{ page.html }}">{{ page.name }}</a>
+            <a class="nav-link" href="{{ target.prefix }}{{ page.html }}">{{ page.name }}</a>
           </li>
         {% endif %}
       {% endfor %}

@@ -17,4 +17,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis elementum est
 
 ## Other Syntax Tests
 
-**Tip:** Callouts like this are usually colored green to give people a reassuring, positive association.
+> **Tip:** Callouts like this are usually colored green to give people a reassuring, positive association.
+>
+> - "Note" callouts provide additional information, and are a neutral blue.
+> - "Caution" callouts are a yellow.
+> - "Warning" callouts are red for danger!

@@ -10,6 +10,8 @@ targets:
 
 This is like [the other tutorial](/tutorials/1/), but it uses frontmatter to define some of its important stuff.
 
+[New in: v0.0.0](# "BADGE_GREEN")
+
 ## Prerequisites
 
 Same as the other one.
